@@ -1,3 +1,5 @@
+package FileInfo;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -17,6 +19,7 @@ public class FileExample {
     public static void main(String[] args) {
         createFile();
         fileInfo();
+
     }
 
     /**
