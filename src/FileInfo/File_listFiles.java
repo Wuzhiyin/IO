@@ -1,11 +1,11 @@
-package FileInfo;
+package fileInfo;
 
 import java.io.File;
 import java.io.FileFilter;
 
 /**
- * 获取一个目录中的所有子项
- * 重载的listFiles方法:
+ * 1.获取一个目录中的所有子项
+ * 2.重载的listFiles方法:
  * File[] listFiles(FileFilter filter)
  * 该方法要求传入一个文件过滤器,然后返回当前
  * File表示的目录中所有满足过滤器要求的子项.
@@ -28,7 +28,11 @@ public class File_listFiles {
 
     private static void File_listFile2() {
         File dir = new File(".");
-
+        /**
+         * JAVA8 特性lambda表达式替代匿名内部类更加简洁
+         * Java中内部类以及Lambda表达式中不允许修改外部类中的变量(fileFilter)，这是为了避免多线程情况下的race condition
+         */
+        //FileFilter fileFilter = (File pathname)->{System.out.println("过滤:"+pathname.getName()); return pathname.getName().endsWith(".txt");};
         FileFilter filter = new FileFilter(){
             public boolean accept(File file){
                 String name = file.getName();
