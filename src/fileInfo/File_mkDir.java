@@ -16,15 +16,15 @@ public class File_mkDir {
 		 * 在当前目录中创建一个目录"demo"
 		 * "./"可以不写,默认就是当前目录
 		 */
-        File_mkDir();
+        file_mkDir();
         /*
 		 * 在当前目录中
 		 * 创建目录:a/b/c/d/e/f
 		 */
-        File_mkDirs();
+        file_mkDirs();
     }
 
-    private static void File_mkDirs() {
+    private static void file_mkDirs() {
         File dirs = new File("."+File.separator
                             +"a"+File.separator
                             +"b"+File.separator
@@ -44,7 +44,7 @@ public class File_mkDir {
         }
     }
 
-    private static void File_mkDir() {
+    private static void file_mkDir() {
         File dir = new File("demo");
         if (!dir.exists()){
             dir.mkdir();

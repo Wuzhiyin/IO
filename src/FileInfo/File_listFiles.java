@@ -19,14 +19,14 @@ public class File_listFiles {
         /*
 		 * 查看当前目录中的所有子项
 		 */
-        File_listFile1();
+        file_listFile1();
         /*
 		 * 获取当前目录中所有文本文件
 		 */
-        File_listFile2();
+        file_listFile2();
     }
 
-    private static void File_listFile2() {
+    private static void file_listFile2() {
         File dir = new File(".");
         /**
          * JAVA8 特性lambda表达式替代匿名内部类更加简洁
@@ -46,7 +46,7 @@ public class File_listFiles {
         }
     }
 
-    private static void File_listFile1() {
+    private static void file_listFile1() {
         File dir = new File(".");
         /*
 		 * dir.isFile()

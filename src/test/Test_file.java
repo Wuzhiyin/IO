@@ -1,3 +1,5 @@
+package test;
+
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -10,12 +12,12 @@ import java.text.SimpleDateFormat;
  * @Author Warriorwu
  * @Create 2018-01-06 14:40
  */
-public class Test {
+public class Test_file {
     public static void main(String[] args) {
         /**
-         * 1.创建一个文件夹名为"Test"保存在D盘
+         * 1.创建一个文件夹名为"test.Test_file"保存在D盘
          */
-        File dir = new File("D:"+File.separator+"Test");
+        File dir = new File("D:"+File.separator+"test.Test_file");
         if (!dir.exists()){
             dir.mkdir();
             System.out.println("创建完毕!");
@@ -26,7 +28,7 @@ public class Test {
          * 2.在Test文件夹中创建一个多级目录分别为"a/b/c/d"
          */
         File dirs = new File("D:"+File.separator
-                            +"Test"+File.separator
+                            +"test.Test_file"+File.separator
                             +"a"+File.separator
                             +"b"+File.separator
                             +"c"+File.separator
@@ -41,7 +43,7 @@ public class Test {
          * 3.创建一个文件名为"wu.txt"的文本文件保存在Test文件夹下
          */
         File file = new File("D:"+File.separator
-                            +"Test"+File.separator
+                            +"test.Test_file"+File.separator
                             +"wu.txt");
         try {
             if (!file.exists()){
@@ -102,6 +104,26 @@ public class Test {
         for (File sub: subs) {
             System.out.println(sub.getName());
         }
+        /**
+         * 7.完成方法,将给定的File对象所表示的
+         * 文件或目录删除
+         */
+        File deDir = new File("D:\\a");
+        delete(deDir);
+    }
+
+    /**
+     * 将给定的File对象表示的文件或目录删除
+     * @param deDir
+     */
+    private static void delete(File deDir) {
+        if (deDir.isDirectory()){
+            File[] subs = deDir.listFiles();
+            for (File sub:subs) {
+                sub.delete();
+            }
+        }
+        deDir.delete();
     }
 
 }
